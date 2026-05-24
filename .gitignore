@@ -1,0 +1,98 @@
+.agents/
+skills-lock.json
+
+
+# ==============================================================================
+# 1. Environment Secrets & Credentials (CRITICAL)
+# ==============================================================================
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.cert
+secrets.json
+jwt_secret.txt
+
+# ==============================================================================
+# 2. Python / Backend Dependency Isolation
+# ==============================================================================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Distribution / Packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ==============================================================================
+# 3. Frontend & Mobile (Node.js / React Native / Flutter)
+# ==============================================================================
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Build outputs
+/dist
+/out
+.next/
+.nuxt/
+
+# Mobile specific native build tracks
+/android/build/
+/android/app/build/
+/ios/Pods/
+/ios/build/
+.pub-cache/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# ==============================================================================
+# 4. Databases & Native OS Traces
+# ==============================================================================
+# Local DB storage or Docker data volumes
+*.db
+*.sqlite3
+pgdata/
+mongo_data/
+
+# Log files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# System Files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
