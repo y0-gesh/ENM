@@ -17,11 +17,11 @@ const router = Router();
 // Provider only routes (placed before dynamic ID search to avoid conflict)
 router.get('/me', authenticateJWT, requireRole('PROVIDER'), getOwnProfile);
 
-// Public routes
-router.get('/:id', getProviderById);
-
 // Protected routes (requires auth)
 router.get('/nearby', authenticateJWT, validateRequest(nearbySchema), getNearbyProviders);
+
+// Public routes
+router.get('/:id', getProviderById);
 
 // Provider updates
 router.put('/me', authenticateJWT, requireRole('PROVIDER'), validateRequest(updateProfileSchema), updateOwnProfile);
