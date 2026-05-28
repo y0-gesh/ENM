@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001/api';
 
 let accessTokenInMemory = '';
 
@@ -28,7 +28,18 @@ export async function apiFetch(path: string, options: RequestInit = {}): Promise
     credentials: options.credentials || 'include' // auto pass cookies for refresh
   };
 
-  let response = await fetch(url, fetchOptions);
+  let response: Response;
+  try {
+    response = await fetch(url, fetchOptions);
+  } catch (err: any) {
+    console.error('[API Client] Network error while fetching:', { url, err });
+    const networkError = new Error(
+      `Network error while fetching ${url}: ${err?.message || String(err)}`
+    );
+    (networkError as any).original = err;
+    (networkError as any).url = url;
+    throw networkError;
+  }
 
   // If unauthorized, attempt to perform token refresh
   if (

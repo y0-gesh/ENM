@@ -1,6 +1,6 @@
+import { apiFetch } from '@/lib/api';
+import { NearbyProvider } from '@/types';
 import { useState, useEffect, useCallback } from 'react';
-import { NearbyProvider } from '../types';
-import { apiFetch } from '../lib/api';
 
 export function useNearbyProviders(
   lat: number | null,
