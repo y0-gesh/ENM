@@ -1,4 +1,5 @@
 # ENM (Everything Near Me)
+![ENM Home Page](frontend/public/home.avif)
 
 **ENM (Everything Near Me)** is a premium, hyper-local, on-demand service discovery and booking platform. It seamlessly connects consumers ("Users") looking for immediate or scheduled home maintenance with nearby, verified tradespeople ("Providers") like plumbers, electricians, cleaners, locksmiths, and HVAC technicians.
 
